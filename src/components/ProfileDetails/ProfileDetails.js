@@ -54,7 +54,7 @@ class ProfileDetailsComponent extends Component{
                     </tr>
                     <tr>
                         <td className={classes.td}>Department</td>
-                        <td className={classes.td}>{user.dept.name}</td>
+                        <td className={classes.td}>{user.dept ? user.dept.name : "-"}</td>
 
                     </tr>
                     <tr>
