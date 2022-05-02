@@ -66,7 +66,7 @@ function App() {
         </Switch>
        </Router> */}
         <center>
-          <h1>Website Is Under Maintainance</h1>
+          <h2>Website Is Under Maintainance</h2>
         </center>
         {/* <Home/> */}
         {/* <Login type="Director"/>
