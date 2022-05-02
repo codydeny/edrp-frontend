@@ -24,6 +24,8 @@ import {
   useParams,
 } from "react-router-dom";
 import DepartmentProfileTable from "./DepartmentProfileTable";
+import { Profile } from "../Profile/Profile";
+import { ProfileDetails } from "../ProfileDetails/ProfileDetails";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -114,6 +116,16 @@ export default function DepartmentProfileTableHOC(props) {
     store.fetchStepData(1, 11);
     store.fetchAllStepsData();
 
+    if (store.state.user.type === "FACULTY") {
+      store.fetchLatestFacultyProfile();
+      // axios.get('actual_faculty_profile').then((res)=> setFaculty_profile(res.data))
+    }
+    if (match.params.deptId) {
+      setDepartment(parseInt(match.params.deptId));
+    }
+    store.fetchStepData(1, 11);
+    store.fetchAllStepsData();
+
     axios.get("department").then((res) => {
       setOptions(res.data);
       setLoading(false);
@@ -158,39 +170,14 @@ export default function DepartmentProfileTableHOC(props) {
 
       {store.state.user.type === "FACULTY" && <div></div>}
 
-      {Object.keys(facultyConfig).map((key_) => (
-        <>
-          <Paper elevation={2} variant="outlined">
-            <TableContainer
-              style={{ border: "1px solid gray", marginBottom: "20px" }}
-            >
-              <Typography
-                variant="h6"
-                component="h5"
-                style={{
-                  marginBottom: "-20px",
-                  marginTop: "10px",
-                  marginLeft: "20px",
-                }}
-              >
-                <b>{CRITERION_DESCRIPTION[key_]}</b>{" "}
-              </Typography>
-              {Object.keys(facultyConfig[key_]).map((key, i) => (
-                <>
-                  <DepartmentProfileTable
-                    criterion={key_}
-                    step={key}
-                    fields={facultyConfig[key_][key].fields}
-                    criterionDescription={CRITERION_DESCRIPTION[key_]}
-                    department={department}
-                    loading={loading}
-                  />
-                </>
-              ))}
-            </TableContainer>
-          </Paper>
-        </>
-      ))}
+      {store.state.user.type === "FACULTY" && (
+        <div style={{ marginBottom: "10px" }}>
+          <ProfileDetails
+            data={store.state.facultyResume}
+            user={store.state.user}
+          />
+        </div>
+      )}
 
       {/* {Object.keys(CRITERION_CONFIG).map((key)=>
             <Criterion criterion={CRITERION_CONFIG[key]} criterionId={key} criterionDescription={CRITERION_DESCRIPTION[key]}/>
