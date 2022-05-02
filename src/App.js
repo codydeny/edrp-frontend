@@ -73,7 +73,7 @@ function App() {
     <Register/> */}
         {/* <CriterionOne/> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
