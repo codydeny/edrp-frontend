@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <Router>
+        <Router>
        <Header/>
         <HeaderBranding/>
        <Nav/>
@@ -64,16 +64,13 @@ function App() {
           <Admissions/>
           </Route>
         </Switch>
-       </Router> */}
-        <center>
-          <h2>Website Is Under Maintainance</h2>
-        </center>
+       </Router>
         {/* <Home/> */}
         {/* <Login type="Director"/>
     <Register/> */}
         {/* <CriterionOne/> */}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
