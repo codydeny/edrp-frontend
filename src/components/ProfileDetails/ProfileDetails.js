@@ -108,7 +108,6 @@ class ProfileDetailsComponent extends Component{
                     </tr>
                 </table>
 
-                <Typography variant="h5" style={{display:'flex', justifyContent:'center', marginY : '10px'}}> Proffesional Work</Typography>
                 </div>
             </div>
         )

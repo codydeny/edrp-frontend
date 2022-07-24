@@ -135,7 +135,8 @@ export default function DepartmentProfileTableHOC(props) {
               {store.state.user.type === 'FACULTY' && <div style={{marginBottom : '10px'}}>
                 <ProfileDetails data={store.state.facultyResume} user={store.state.user}/>
                 </div>}
-
+                <Typography variant="h5" style={{display:'flex', justifyContent:'center', marginY : '10px'}}> Professional Work</Typography>
+ 
             {Object.keys(facultyConfig).map((key_)=>(<>
             <Paper elevation={2} variant="outlined">
             <TableContainer style={{border: "1px solid gray", marginBottom: "20px"}}>

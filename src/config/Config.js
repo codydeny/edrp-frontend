@@ -6,7 +6,7 @@ if(process.env.NODE_ENV === 'development') {
   }
   
   if(process.env.NODE_ENV === 'production') {
-    GLOBAL_URL = 'https://api.hnbguiqac.in/api'
+    GLOBAL_URL = 'https://hnbguiqac.herokuapp.com/api'
   }
 // https://corsanywhere.herokuapp.com/https://freereddittesting.000webhostapp.com/api/
 
