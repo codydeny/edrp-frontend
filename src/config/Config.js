@@ -2,11 +2,11 @@
 let GLOBAL_URL = "";
 
 if(process.env.NODE_ENV === 'development') {
-    GLOBAL_URL = 'http://localhost:8000/api'
+    GLOBAL_URL = 'https://hnbguiqac.herokuapp.com/api'
   }
   
   if(process.env.NODE_ENV === 'production') {
-    GLOBAL_URL = 'https://api.hnbguiqac.in/api'
+    GLOBAL_URL = 'https://hnbguiqac.herokuapp.com/api'
   }
 // https://corsanywhere.herokuapp.com/https://freereddittesting.000webhostapp.com/api/
 

@@ -1,15 +1,28 @@
 import React from 'react';
-import Card from '../Profile';
+import { MyContext } from '../../../store/Store';
+import TeacherCard from './Card';
+
 const Cardlist= ( {Robots} )=> {
 
+    const store = React.useContext(MyContext);
+
+    React.useEffect(() => {
+        store.fetchFaculties()
+    }, [])
+
     return (
-        <div>{Robots.map((user, i) => {
-            return <Card 
+        <div style={{display:'flex', flexWrap:'wrap'}}>
+            {store.state.facultyList.length < 0 && <>
+            <center>
+                <h5>Please Wait...</h5>
+            </center>
+            </>}
+          {store.state.facultyList.map((user, i) => {
+            return <TeacherCard 
             key={i}
-            id={Robots[i].id} 
-            name={Robots[i].name} 
-            email={Robots[i].email}
-            username={Robots[i].username} />
+            data={user}
+            user={store.state.user}
+             />
         })}
         </div>
     )

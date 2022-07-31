@@ -34,6 +34,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import DepartmentProfileTableHOC from './DepartmentProfileTableHOC';
+import { ArrowForward } from '@material-ui/icons';
+import { Profile } from '../Profile/Profile';
 
 
 
@@ -87,11 +89,10 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "1000px",
         margin : "0 auto",
         padding : theme.spacing(1),
-        height : "1000px"
       },
     },
     paper : {
-        height : "170px",
+        height : "130px",
         margin : theme.spacing(1),
         padding : theme.spacing(1)
     }
@@ -125,16 +126,21 @@ export default function AllSchools() {
                                             <img src={dept} style={{width : 'auto', height : '100px'}}/>
                                         </Grid>
                                         <Grid item sm={6} style={{margin : "0 auto",}} xs={12}>
-                                        <Typography style={{marginBottom : "10px",}}>
+                                        <Typography style={{marginBottom : "10px",}} variant="caption">
                                                 {link.campus.name}
+                                            </Typography>
+                                            <Typography style={{marginBottom : "10px",}}>
+                                                {link.name}
                                             </Typography>
                                             <Link
                                               to={{
                                                 pathname: `${match.path}/${link.id}`, 
                                                 query:{school: link}
                                               }}
-                                             style={{textDecoration: 'none',}}>
-                                            <Button variant="contained" color="primary" disableRipple disableElevation disableFocusRipple >{link.name}</Button>
+                                             style={{textDecoration: 'none'}}>
+                                            <Button variant="outlined" color="primary" size="small" disableRipple disableElevation disableFocusRipple
+                                                style={{margin : "0 auto",}}
+                                            >View More <ArrowForward style={{fontSize : "1.2em"}}/> </Button>
                                             </Link> 
                                         </Grid>
                                 </Grid>
@@ -186,16 +192,21 @@ export const SchoolDetail = (props)=> {
                                        <img src={dept} style={{width : 'auto', height : '100px'}}/>
                                    </Grid>
                                    <Grid item sm={6} style={{margin : "0 auto",}} xs={12}>
-                                   <Typography style={{marginBottom : "10px",}}>
-                                           {link.name}
-                                       </Typography>
+                                   <Typography style={{marginBottom : "10px",}} variant="caption">
+                                          {school.name}
+                                      </Typography>
+                                      <Typography style={{marginBottom : "15px",}}>
+                                          {link.name}
+                                      </Typography>
                                        <Link
                                          to={{
                                            pathname: `${match.path}/dept/${link.id}`, 
                                            query:{dept: link}
                                          }}
                                         style={{textDecoration: 'none',}}>
-                                       <Button variant="contained" color="primary" disableRipple disableElevation disableFocusRipple >{link.name}</Button>
+                                       <Button size="small" variant="outlined" color="primary" disableRipple disableElevation disableFocusRipple >
+                                         Read More <ArrowForward style={{fontSize: '.85em'}}/>
+                                       </Button>
                                        </Link> 
                                    </Grid>
                            </Grid>
@@ -260,8 +271,9 @@ export const DepartmentDetail = (props)=> {
         <Switch>
            <Route path={match.path}>
                 <Tabs value={value} centered onChange={handleChange} aria-label="simple tabs example">
-                  <Tab label="Faculty Data" {...a11yProps(0)} />
+                  <Tab label="Department Data" {...a11yProps(0)} />
                   <Tab label="IQAC Data" {...a11yProps(1)} />
+                  <Tab label="Faculty Profiles" {...a11yProps(2)} />
                 </Tabs>
               <TabPanel value={value} index={0}>
                 <DepartmentProfileTableHOC/>
@@ -269,6 +281,9 @@ export const DepartmentDetail = (props)=> {
               <TabPanel value={value} index={1}>
                 <CriterionTableHOC/>
               </TabPanel>
+              <TabPanel value={value} index={2}>
+               <Profile/>
+            </TabPanel>
            </Route>
          </Switch>
    </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Scroll=(props)=>{
-  return (<div className="bg-light-green dib br3 pa3 bw2 shadow-5 ma2" style={{overflowY:'scroll', height: '457px' }}>
+const Scroll = (props) => {
+  return (<div  style={{overflowY:'auto', height: '700px', margin:'0px 30px 20px 30px',  border:'3px solid green', borderRadius:'6px' }}>
        {props.children}
    </div>);
 }

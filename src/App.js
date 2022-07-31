@@ -22,49 +22,64 @@ import AllSchools from "./components/Views/AllSchools";
 import { MyContext } from "./store/Store";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
 import FacultyProfileHOC from "./components/Templates/FacultyProfileHOC";
+import { Profile } from "./components/Profile/Profile";
+import { TeacherForm } from "./components/TeacherForm/TeacherForm";
+import { ProfileDetails } from "./components/ProfileDetails/ProfileDetails";
 
 function App() {
   const { state, aboutUser } = React.useContext(MyContext);
 
   React.useEffect(() => {
-    aboutUser();
+    // aboutUser()
   }, []);
   return (
     <>
       <div className="App">
         <Router>
-       <Header/>
-        <HeaderBranding/>
-       <Nav/>
-      
-       <Switch>
-          <Route path="/login">
-            <Login type=" "/>
-          </Route>
+          <Header />
+          <HeaderBranding />
+          <Nav />
 
-          <Route path="/reset-password">
-            <ResetPassword/>
-          </Route>
-          <Route path="/aqar">
-           <CriterionHOC/>
-          </Route>
-          <Route path="/entity-entry">
-           <FacultyProfileHOC/>
-          </Route>
-          <Route path="/entity-report/">
-           <FacultyProfile/>
-          </Route>
-          <Route path="/erod">
-            <DepartmentReport/>
-          </Route>
-          <Route path="/schools">
-            <AllSchools/>
-          </Route>
-          <Route path="/">
-          <Admissions/>
-          </Route>
-        </Switch>
-       </Router>
+          <Switch>
+            <Route path="/profile_page">
+              <Profile />
+            </Route>
+            <Route path="/TeacherForm">
+              <TeacherForm />
+            </Route>
+            <Route path="/ProfileDetails">
+              <ProfileDetails />
+            </Route>
+            <Route path="/login">
+              <Login type=" " />
+            </Route>
+
+            <Route path="/reset-password">
+              <ResetPassword />
+            </Route>
+            {/* <Route path="/aqar">
+           <CriterionOne/>
+          </Route> */}
+            <Route path="/aqar">
+              <CriterionHOC />
+            </Route>
+            <Route path="/entity-entry">
+              <FacultyProfileHOC />
+            </Route>
+            <Route path="/entity-report/">
+              <FacultyProfile />
+            </Route>
+            <Route path="/erod">
+              <DepartmentReport />
+            </Route>
+            <Route path="/schools">
+              <AllSchools />
+            </Route>
+            <Route path="/">
+              <Admissions />
+            </Route>
+          </Switch>
+        </Router>
         {/* <Home/> */}
         {/* <Login type="Director"/>
     <Register/> */}
