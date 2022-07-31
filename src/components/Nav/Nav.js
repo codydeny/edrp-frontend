@@ -70,6 +70,10 @@ export default function Nav() {
          <Link to="/aqar" style={{textDecoration: "none", color :"white"}}>
          <div className='navLink'> <div className='navLinkText'>AQAR</div> </div>
            </Link>
+           <Divider orientation="vertical" flexItem style={{background : 'white', width : '1px', transform:'scaleX(0.5)'}}/>
+           <Link to="/profile_page" style={{textDecoration: "none", color :"white"}}>
+         <div className='navLink'> <div className='navLinkText'>Faculty Profile</div> </div>
+           </Link>
        </>}
 
      

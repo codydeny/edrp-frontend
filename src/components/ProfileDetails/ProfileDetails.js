@@ -41,7 +41,7 @@ class ProfileDetailsComponent extends Component{
                         <th className={classes.th}>{data.name}</th>
                         <td rowspan="9" colspan="2" className={classes.td}>    
                         <center>
-                        <img className={classes.img} style={{margin : "0 auto"}} src='https://user-images.githubusercontent.com/22274195/160230059-825a1040-e684-4145-ac05-5c7d1a0f02c6.PNG' />
+                        <img className={classes.img} style={{margin : "0 auto"}} src={data.profile_picture}/>
 
                             </center>          
                         </td>

@@ -96,7 +96,7 @@ export const TeacherForm = (props) => {
             <Grid item xs={12} sm={6}>
                 <Button style={{marginLeft:'30px', marginTop:'15px'}} id="photographbutton" variant="contained" component="label" name="photographbutton">
                     Upload Photo
-                    <input id="photographinput" type="file" hidden name="photographinput"/>
+                    <input id="profile_picture" type="file" hidden name="profile_picture"/>
                 </Button>
             </Grid>
             <Grid item xs={12} sm={12}>
