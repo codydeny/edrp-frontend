@@ -72,7 +72,12 @@ export default function DepartmentProfileTable(props) {
                 (field) =>
                   !EXCLUDE_FIELDS[field.name] && (
                     <TableCell
-                      style={{ textTransform: "capitalize", color: "gray" }}
+                      style={{
+                        textTransform: "capitalize",
+                        color: "black",
+                        fontWeight: "normal",
+                        fontSize: ".8em",
+                      }}
                     >
                       <b>{field.label.replaceAll("_", " ")}</b>
                     </TableCell>
@@ -81,7 +86,14 @@ export default function DepartmentProfileTable(props) {
               {/* {rows.length > 0 && Object.keys(rows[0]).map((key)=> (!EXCLUDE_FIELDS[key] && <TableCell align="left" style={{textTransform: "capitalize"}}><b>{key.replaceAll("_", " ")}</b></TableCell>))} */}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody
+            style={{
+              textTransform: "capitalize",
+              color: "black",
+              fontWeight: "normal",
+              fontSize: ".8em",
+            }}
+          >
             {props.loading && (
               <TableRow key="loading">
                 <TableCell component="th" scope="row">
