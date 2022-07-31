@@ -12,15 +12,21 @@ export default function Header() {
       <div className="headerLeft">
         <div className="iconDiv">
           {" "}
-          <TwitterIcon />{" "}
+          <a href="https://twitter.com/h_garhwal?s=20&t=N6rIwZgiBt3iHDbyvj1V6A">
+            <TwitterIcon style={{ color: "white" }} />
+          </a>{" "}
         </div>
         <div className="iconDiv">
           {" "}
-          <YouTubeIcon />{" "}
+          <a href="https://www.youtube.com/c/HNBGarhwalUniversitySrinagarGarhwal/">
+            <YouTubeIcon style={{ color: "white" }} />
+          </a>{" "}
         </div>
         <div className="iconDiv">
           {" "}
-          <FacebookIcon />{" "}
+          <a href="https://www.facebook.com/HnbGarhwalUniversityShrinagarUttaranchal/">
+            <FacebookIcon style={{ color: "white" }} />
+          </a>{" "}
         </div>
       </div>
       <div className="centerText"> IQAC</div>
