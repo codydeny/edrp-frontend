@@ -100,20 +100,24 @@ export default function DepartmentProfileTableHOC(props) {
     console.log(event.target.value);
   };
 
-  // const handleClick = (key_)=> {
-  //     setKey(key_)
-  //     setSelected({[key_] : true})
-  // }
+  // const handleClick = (key_) => {
+  //   setKey(key_);
+  //   setSelected({ [key_]: true });
+  // };
   React.useEffect(() => {
     if (store.state.user.type === "FACULTY") {
-      store.fetchLatestFacultyProfile();
-      // axios.get('actual_faculty_profile').then((res)=> setFaculty_profile(res.data))
+      // store.fetchLatestFacultyProfile();
+      axios
+        .get("actual_faculty_profile")
+        .then((res) => setFaculty_profile(res.data));
     }
+    
     if (match.params.deptId) {
       setDepartment(parseInt(match.params.deptId));
     }
     store.fetchStepData(1, 11);
     store.fetchAllStepsData();
+    store.fetchAllFacultyStepData();
 
     axios.get("department").then((res) => {
       setOptions(res.data);
