@@ -40,9 +40,9 @@ function App() {
   return (<>
     <div className="App">
        <Router>
-       <Header/>
+        <Header/>
         <HeaderBranding/>
-       <Nav/>
+        <Nav/>
       
        <Switch>
           <Route path="/profile_page">
