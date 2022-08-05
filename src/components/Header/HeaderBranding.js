@@ -26,7 +26,8 @@ export default function HeaderBranding() {
 
       </div>
       {
-        store.state.user.type==="FACULTY" ?       
+        store.state.user.type==="FACULTY" ?    
+        store.state.facultyResume.name === " "  ?  store.state.user.type  :
         <div className='subHeaderRight'>
           User Name: {store.state.facultyResume.name} 
           <br/>
@@ -37,7 +38,6 @@ export default function HeaderBranding() {
         </div>
         
       }
-
     </div>
   );
 }
