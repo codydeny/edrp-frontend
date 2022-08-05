@@ -203,7 +203,6 @@ class MyProvider extends React.Component {
             if (this.state.data[`c${critertion}${step}`]) {
               temp = this.state.data[`c${critertion}${step}`];
             }
-            temp.push(entry);
 
             let criterionId = await (
               await axios.get(`${CRITERION_STR_MAP[critertion]}`)
@@ -216,6 +215,10 @@ class MyProvider extends React.Component {
               })
               .then(async (res) => {
                 console.log(criterionId);
+                let fp = await (
+                  await axios.get(`c${critertion}${step}/${criterionId.id}`)
+                ).data;
+                temp.push(fp);
                 this.setState({
                   data: {
                     ...this.state.data,
