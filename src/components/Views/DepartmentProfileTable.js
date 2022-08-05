@@ -34,7 +34,9 @@ const EXCLUDE_FIELDS = {
 
 const FIELDS_WITH_NAME = {
   dept: true,
+  department: true,
   programme: true,
+  campus: true,
 };
 
 export const generateTabHeading = (criterion, step) => {
@@ -51,11 +53,11 @@ export default function DepartmentProfileTable(props) {
   const classes = useStyles();
 
   return (
-    <Paper variant="outlined" elevation={1} className={classes.tableRoot}>
+    <Paper className={classes.tableRoot}>
       <TableContainer>
         <div>
           <Typography
-            variant="body1"
+            variant="subtitle2"
             component="h5"
             className={classes.typography}
           >
@@ -65,7 +67,7 @@ export default function DepartmentProfileTable(props) {
           </Typography>
           <Divider />
         </div>
-        <Table className={classes.table} aria-label="simple table">
+        <Table className={classes.table} aria-label="simple table" size="small">
           <TableHead>
             <TableRow>
               {props.fields.map(

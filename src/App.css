@@ -31,6 +31,7 @@ body::-webkit-scrollbar-thumb {
 
 .print-friendly {
 	display: block;
+	page-break-inside: avoid;
 }
 
 .print-only {
@@ -39,14 +40,23 @@ body::-webkit-scrollbar-thumb {
 
 .print-docs {
 	display: block;
+	page-break-inside: avoid;
 }
 
   @media print {
+	html,
+		body {
+			width: 105%;
+			height: 100%;
+			margin-left: -2%;
+			position: absolute;
+		}
 	.print-friendly {
 			display: none !important;
 		}
 	.print-docs {
-		max-width: 95% !important;
+		max-width: 99% !important;
+		overflow: visible;
 
 	}
 	.print-only {

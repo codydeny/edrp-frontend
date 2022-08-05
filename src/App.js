@@ -30,7 +30,8 @@ function App() {
   const { state, aboutUser } = React.useContext(MyContext);
 
   React.useEffect(() => {
-    // aboutUser()
+    // aboutUser();
+    //fetchLatestFacultyProfile();
   }, []);
   return (
     <>

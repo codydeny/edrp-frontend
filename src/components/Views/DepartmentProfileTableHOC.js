@@ -111,7 +111,7 @@ export default function DepartmentProfileTableHOC(props) {
         .get("actual_faculty_profile")
         .then((res) => setFaculty_profile(res.data));
     }
-    
+
     if (match.params.deptId) {
       setDepartment(parseInt(match.params.deptId));
     }
@@ -172,7 +172,7 @@ export default function DepartmentProfileTableHOC(props) {
         </div>
       )}
 
-      <div className="print-only">
+      <div className="print-only" style={{ marginBottom: "10px" }}>
         <center>The Annual Quality Assurance Report(AQAR) of the IQAC</center>
       </div>
 
@@ -183,7 +183,7 @@ export default function DepartmentProfileTableHOC(props) {
               style={{ border: ".5px solid gray", marginBottom: "20px" }}
             >
               <Typography
-                variant="h6"
+                variant="body1"
                 component="h5"
                 style={{
                   marginBottom: "-20px",
