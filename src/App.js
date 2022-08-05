@@ -27,11 +27,12 @@ import { TeacherForm } from "./components/TeacherForm/TeacherForm";
 import { ProfileDetails } from "./components/ProfileDetails/ProfileDetails";
 
 function App() {
-  const { state, aboutUser } = React.useContext(MyContext);
+  const { state, aboutUser, fetchLatestFacultyProfile } =
+    React.useContext(MyContext);
 
   React.useEffect(() => {
-    // aboutUser();
-    //fetchLatestFacultyProfile();
+    aboutUser();
+    fetchLatestFacultyProfile();
   }, []);
   return (
     <>
