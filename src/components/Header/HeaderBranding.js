@@ -13,25 +13,31 @@ export default function HeaderBranding() {
   const userName = store.state.facultyResume.name;
   const userEmail = store.state.facultyResume.email_secondary;
   return (
-    <div className="HeaderBranding print-friendly">
-      <div className="headerLogoDiv">
-        {" "}
-        <img src={logo} className="logo" />
-      </div>
-      <div className="headerTitleDiv">
-        <div className="headerTitle">
+    <div className="HeaderBranding">
+
+      <div className='headerLogoDiv'>  <img src={logo} className='logo' /></div>
+      <div className='headerTitleDiv'>
+        <div className='headerTitle'>
           Hemvati Nandan Bahuguna Garhwal University
         </div>
-        <div className="headerSubtitle">
-          <div className="solid leftLine"></div> A Central University{" "}
-          <div className="solid rightLine"> </div>
+        <div className='headerSubtitle'>
+          <div className='solid leftLine'></div> A Central University <div className='solid rightLine'> </div>
         </div>
+
       </div>
-      {store.state.user.type === "FACULTY" ? (
-        <div className="userType">{store.state.user.type}</div>
-      ) : (
-        <div className="userType">{store.state.user.type}</div>
-      )}
+      {
+        store.state.user.type==="FACULTY" ?       
+        <div className='subHeaderRight'>
+          User Name: {store.state.facultyResume.name} 
+          <br/>
+          Email: {store.state.facultyResume.email_secondary}
+        </div> :
+        <div className='userType'>
+          {store.state.user.type}           
+        </div>
+        
+      }
+
     </div>
   );
 }
