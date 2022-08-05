@@ -62,7 +62,7 @@ class ProfileDetailsComponent extends Component {
         </Dialog>
         <div>
           <table className={classes.table}>
-            <tr>
+            {/* <tr>
               <th className={classes.th}>Name</th>
               <th className={classes.th}>{data.name}</th>
               <td rowspan="9" colspan="2" className={classes.td}>
@@ -74,7 +74,7 @@ class ProfileDetailsComponent extends Component {
                   />
                 </center>
               </td>
-            </tr>
+            </tr> */}
 
             <Dialog
               onClose={() => {
